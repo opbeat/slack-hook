@@ -1,23 +1,60 @@
+import json
 import os
 import requests
 from bottle import post, run, request
 from bottle import jinja2_template as template
 
 activity_template = """
-<b>{{app['name']}}:</b> <{{html_url}}|{{title}}> - {{summary}}
+{{app['name']}}: <{{html_url}}|{{title}}>\n{{summary}}
 """
+
+
+DEFAULT_COLOR = "#808080"
+COLORS = {
+    "errorgroup": {"created": "bad"},
+    "release": {"created": "good"},
+}
+
+
+def get_color(subject_type, action):
+    return COLORS.get(subject_type, {}).get(action, DEFAULT_COLOR)
 
 SLACK_URL = os.environ.get('SLACK_URL')
 if not SLACK_URL:
     print("Missing environment variable SLACK_URL")
+    exit(1)
 
 
-def send(self, data):
-    rendered_activity = template(self.activity_template, **data)
+def send(data):
+    rendered_activity = template(activity_template, **data)
+    post_data = {
+        "icon_url": "https://secure.gravatar.com/avatar/a6ec5537afa27bdb4fe5056e2d34810d",
+        "username": "Opbeat",
+        "attachments": [
+            {
+                "fallback": rendered_activity,
+                "pretext": "{} {} <{}|Details>".format(data['subject_type'], data['action'], data['html_url']),
+                "color": get_color(data['subject_type'], data['action']),
+                "fields": [
+                    {
+                        "title": data['title'],
+                        "value": data['summary'],
+                        "short": False
+                    }
+                ]
+            }
+        ]
+    }
 
-    requests.post(SLACK_URL, {
-        "payload": {"text": rendered_activity}
-    })
+    resp = requests.post(
+        SLACK_URL,
+        data={"payload": json.dumps(post_data)}
+    )
+    if resp.status_code != 200:
+        print(resp.status_code, resp.text)
+    else:
+        print("Sent activity to slack")
+
 
 @post('/new-activity')
 def new_activity():
