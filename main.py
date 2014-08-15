@@ -66,7 +66,7 @@ def new_activity():
 @route('/setup')
 def setup():
     url = request.url.replace("/setup", "/new-activity")
-    return template('This is your hook url:<h3>{{url}}</h3>', url=url)
+    return template("This is your hook url, copy it:<h3>{{url}}</h3>", url=url)
 
 
 run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))

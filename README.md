@@ -16,12 +16,12 @@ Receive notifications from Opbeat in your Slack channels.
         <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
     </a>
 
-1. **(Optional)** Choose a name and region for your application.
+1. **(Optional)** Choose a name and region for your app.
 1. Paste the unique URL into the `SLACK_URL` field and deploy the app:
 
     ![SS](http://cl.ly/image/0X1o031P1F3c/slack-deployapp.png)
 
-1. After deployment click "View it" to open the new app:
+1. After deployment, click **"View it"** to open the new app:
 
     ![SS](http://cl.ly/image/2M1Y1w0S2O3q/slack-viewapp.png)
 
