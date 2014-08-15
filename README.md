@@ -8,7 +8,7 @@ Receive notifications from Opbeat in your Slack channels.
 
 Quick instructions:
 
-1. Create a Slack integration: https://slack.com/services/new/incoming-webhook.
+1. Create a Slack integration: <a href="https://slack.com/services/new/incoming-webhook" target="_blank">https://slack.com/services/new/incoming-webhook</a>
 1. Copy the unique URL.
 1. Press this button:
 
