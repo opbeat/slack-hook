@@ -1,0 +1,9 @@
+{
+    "name": "Opbeat to Slack hook",
+    "description": "Get Opbeat notifications in Slack chatrooms",
+    "repository": "https://github.com/opbeat/slack-hook",
+    "keywords": ["opbeat", "slack", "error logging", "release tracking"],
+    "env": {
+        "SLACK_URL": null
+    }
+}
