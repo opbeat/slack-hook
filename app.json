@@ -3,6 +3,7 @@
     "description": "Get Opbeat notifications in Slack chatrooms",
     "repository": "https://github.com/opbeat/slack-hook",
     "keywords": ["opbeat", "slack", "error logging", "release tracking"],
+    "success_url": "/setup",
     "env": {
         "SLACK_URL": null
     }
