@@ -19,18 +19,15 @@ It is really simple to set up with a few clicks. Follow these steps:
         <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
     </a>
 
-1. **(Optional)** Choose a name and region for your app.
 1. Paste the unique URL into the `SLACK_URL` field and deploy the app:
     
     <small>Screenshot:</small><br>
     <img src="http://cl.ly/image/0X1o031P1F3c/slack-deployapp.png" title="Screenshot">
 
-1. After deployment, click **"View it"** to open the new app:
+1. After deployment, click **"View it"** to open the new app and copy the hook url.
     
     <small>Screenshot:</small><br>
     <img src="http://cl.ly/image/2M1Y1w0S2O3q/slack-viewapp.png" title="Screenshot">
-
-1. Copy the hook url.
 
 1. Go to `https://opbeat.com/<yourorg>/settings/` and enter the hook url:
     
