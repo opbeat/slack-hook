@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from bottle import route, post, run, request
+from bottle import get, post, run, request
 from bottle import jinja2_template as template
 
 activity_template = """
@@ -63,7 +63,7 @@ def new_activity():
     return "ok"
 
 
-@route('/setup')
+@get('/setup')
 def setup():
     url = request.url.replace("/setup", "/new-activity")
     return template("This is your hook url, copy it:<h3>{{url}}</h3>", url=url)
