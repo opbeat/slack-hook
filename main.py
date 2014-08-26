@@ -33,12 +33,11 @@ def send(data):
         "attachments": [
             {
                 "fallback": rendered_activity,
-                "pretext": "{} {} <{}|Details>".format(data['subject_type'], data['action'], data['html_url']),
+                "pretext": "{}: <{}|{}>".format(data['app']['name'], data['html_url'], data['title']),
                 "color": get_color(data['subject_type'], data['action']),
                 "fields": [
                     {
-                        "title": data['title'],
-                        "value": data['summary'],
+                        "title": data['summary'],
                         "short": False
                     }
                 ]
