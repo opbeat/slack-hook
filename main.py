@@ -37,7 +37,7 @@ def send(data):
                 "color": get_color(data['subject_type'], data['action']),
                 "fields": [
                     {
-                        "title": data['summary'],
+                        "value": data['summary'],
                         "short": False
                     }
                 ]
