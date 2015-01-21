@@ -34,5 +34,12 @@ It is really simple to set up with a few clicks. Follow these steps:
     <small>Screenshot:</small><br>
     <img src="http://cl.ly/image/3k3j2q263K3M/slack-configurehook.png" title="Screenshot">
 
+    **Note:** The hook URL should like this:
+    
+    `https://random-app-name.herokuapp.com/new-activity`
+    
+    The `/new-activity` part is required for the hook to work.
+    
+
 Hooks are now configured. Post a comment on Opbeat to test it out!
 
