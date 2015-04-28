@@ -4,6 +4,8 @@ Opbeat to Slack hook
 Receive notifications from Opbeat in your Slack channels.
 (Uses the new Opbeat API hooks.)
 
+**Note**: Opbeat now has [native Slack integration](https://opbeat.com/docs/articles/how-to-set-up-slack-integration/). The method explained below will continue to work.
+
 ## Setup
 
 It is really simple to set up with a few clicks. Follow these steps:
